@@ -2,14 +2,18 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import { Provider } from 'react-redux';
+import store from './store';
 
-function App() {
+const App = () => {
   return (
-    <div className='App'>
-      <Navbar />
-      <Home />
-    </div>
+    <Provider store={store}>
+      <div className='App'>
+        <Navbar />
+        <Home />
+      </div>
+    </Provider>
   );
-}
+};
 
 export default App;
