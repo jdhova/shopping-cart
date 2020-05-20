@@ -10,8 +10,22 @@
 .App {
   text-align: center;
 }
+.App h2 {
+  margin-bottom: 20px;
+}
 
 .App ul {
   text-align: center;
   list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header {
+  background-color: aquamarine;
+  /* background-image: url('./images/cart.jpeg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100px;
 }
