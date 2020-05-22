@@ -1,8 +1,9 @@
-// import React, { Component } from 'react';
-
 import React from 'react';
+import { connect } from 'react-redux';
+import { getNumbers } from '../actions/getAction';
 
-const Navbar = () => {
+const Navbar = (props) => {
+  console.log(props);
   return (
     <div>
       <header className='header'>
@@ -12,7 +13,8 @@ const Navbar = () => {
             <li>Home</li>
             <li>About</li>
             <li>
-              <span>0</span> Products in Cart
+              You have <span>{props.basketProps.basketNumbers}</span> Products
+              in Cart
             </li>
           </ul>
         </nav>
@@ -21,4 +23,7 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  basketProps: state.basketState,
+});
+export default connect(mapStateToProps, { getNumbers })(Navbar);
