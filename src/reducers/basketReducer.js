@@ -44,8 +44,15 @@ export default (state = initialState, action) => {
         ...state,
       };
     case ADD_PRODUCT_BASKET:
+      let addQuantity = { ...state.products[action.payload] };
+      addQuantity.inCart = true;
+      addQuantity.numbers += 1;
+      let ncost = (addQuantity.price += state.cartCost);
+
+      //   console.log(addQuantity);
       return {
         basketNumbers: state.basketNumbers + 1,
+        cartCost: state.cartCost,
       };
     default:
       return state;
