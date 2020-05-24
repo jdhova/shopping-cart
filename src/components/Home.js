@@ -6,6 +6,7 @@ import whiteshirt from '../images/whiteshirt.jpeg';
 import blackshirt from '../images/blackshirt.jpeg';
 import { connect } from 'react-redux';
 import { addBasket } from '../actions/addAction';
+import { withRouter } from 'react-router-dom';
 
 const Home = (props) => {
   return (
@@ -78,4 +79,4 @@ const Home = (props) => {
   );
 };
 
-export default connect(null, { addBasket })(Home);
+export default connect(null, { addBasket, pure: false })(Home);

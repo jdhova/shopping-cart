@@ -47,12 +47,15 @@ export default (state = initialState, action) => {
       let addQuantity = { ...state.products[action.payload] };
       addQuantity.inCart = true;
       addQuantity.numbers += 1;
-      let ncost = (addQuantity.price += state.cartCost);
 
       //   console.log(addQuantity);
       return {
         basketNumbers: state.basketNumbers + 1,
-        cartCost: state.cartCost,
+        cartCost: state.cartCost + state.products[action.payload].price,
+        products: {
+          ...state.products,
+          [action.payload]: addQuantity,
+        },
       };
     default:
       return state;

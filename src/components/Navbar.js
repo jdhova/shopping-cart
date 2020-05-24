@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { getNumbers } from '../actions/getAction';
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 const Navbar = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <div>
       <header className='header'>
